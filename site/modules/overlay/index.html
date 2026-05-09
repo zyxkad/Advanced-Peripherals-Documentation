@@ -1937,15 +1937,6 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
 </li>
         
           <li class="md-nav__item">
-  <a href="#blockobject" class="md-nav__link">
-    <span class="md-ellipsis">
-      BlockObject
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#boxobject" class="md-nav__link">
     <span class="md-ellipsis">
       BoxObject
@@ -1975,6 +1966,15 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      BlockObject
+    </span>
+  </a>
   
 </li>
         
@@ -2243,9 +2243,9 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
 </li>
         
           <li class="md-nav__item">
-  <a href="#autoupdate" class="md-nav__link">
+  <a href="#isautoupdating" class="md-nav__link">
     <span class="md-ellipsis">
-      autoUpdate
+      isAutoUpdating
     </span>
   </a>
   
@@ -3436,15 +3436,6 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
 </li>
         
           <li class="md-nav__item">
-  <a href="#blockobject" class="md-nav__link">
-    <span class="md-ellipsis">
-      BlockObject
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#boxobject" class="md-nav__link">
     <span class="md-ellipsis">
       BoxObject
@@ -3474,6 +3465,15 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      BlockObject
+    </span>
+  </a>
   
 </li>
         
@@ -3742,9 +3742,9 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
 </li>
         
           <li class="md-nav__item">
-  <a href="#autoupdate" class="md-nav__link">
+  <a href="#isautoupdating" class="md-nav__link">
     <span class="md-ellipsis">
-      autoUpdate
+      isAutoUpdating
     </span>
   </a>
   
@@ -3814,7 +3814,7 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
 <hr />
 <h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
 <p>All fields will have a getter and a setter, which is defined as <code>getXxx</code> and <code>setXxx</code>.
-For <code>boolean</code> fields, getter is defined as <code>isXxx</code> or <code>hasXxx</code>.</p>
+For <code>boolean</code> fields, getter is defined as either <code>isXxx</code> or <code>hasXxx</code>.</p>
 <hr />
 <h3 id="overlayobject">OverlayObject<a class="headerlink" href="#overlayobject" title="Permanent link">&para;</a></h3>
 <table>
@@ -3836,7 +3836,7 @@ For <code>boolean</code> fields, getter is defined as <code>isXxx</code> or <cod
 </tbody>
 </table>
 <h4 id="type">type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>type() -&gt; string
+<div class="highlight"><pre><span></span><code>getType() -&gt; string
 </code></pre></div>
 <p>returns the object's type.</p>
 <h4 id="getid">getId<a class="headerlink" href="#getid" title="Permanent link">&para;</a></h4>
@@ -3865,8 +3865,8 @@ For <code>boolean</code> fields, getter is defined as <code>isXxx</code> or <cod
 <tr>
 <td><code>color</code></td>
 <td><code>number</code></td>
-<td><code>0xffffff</code></td>
-<td>An integer that determines the color of the object, in format of 0xRRGGBB</td>
+<td><code>-1</code></td>
+<td>An integer that determines the color of the object, in format of 0xRRGGBB. <br/>The default value <code>-1</code> is equivalent to <code>0xFFFFFF</code> in most cases.</td>
 </tr>
 <tr>
 <td><code>x</code></td>
@@ -4141,27 +4141,6 @@ For <code>boolean</code> fields, getter is defined as <code>isXxx</code> or <cod
 </tbody>
 </table>
 <hr />
-<h3 id="blockobject">BlockObject<a class="headerlink" href="#blockobject" title="Permanent link">&para;</a></h3>
-<p>Based on <a href="#threedimensionalobject">ThreeDimensionalObject</a></p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>block</code></td>
-<td><code>string</code></td>
-<td><code>"minecraft:air"</code></td>
-<td>The registry ID of the block to render</td>
-</tr>
-</tbody>
-</table>
-<hr />
 <h3 id="boxobject">BoxObject<a class="headerlink" href="#boxobject" title="Permanent link">&para;</a></h3>
 <p>Based on <a href="#threedimensionalobject">ThreeDimensionalObject</a></p>
 <table>
@@ -4202,6 +4181,40 @@ For <code>boolean</code> fields, getter is defined as <code>isXxx</code> or <cod
 <div class="highlight"><pre><span></span><code>setSizes(number, number, number) -&gt; nil
 </code></pre></div>
 <p>sets the object's <code>sizeX</code>, <code>sizeY</code>, <code>sizeZ</code>.</p>
+<hr />
+<h3 id="blockobject">BlockObject<a class="headerlink" href="#blockobject" title="Permanent link">&para;</a></h3>
+<p>Based on <a href="#boxobject">BoxObject</a></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>block</code></td>
+<td><code>string?</code></td>
+<td><code>nil</code></td>
+<td>The registry ID of the block to render</td>
+</tr>
+<tr>
+<td><code>states</code></td>
+<td><code>table</code></td>
+<td>default states of the block</td>
+<td>The states of the block</td>
+</tr>
+<tr>
+<td><code>tintAll</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Make the <code>color</code> attribute affect the whole block, not only the tintable parts</td>
+</tr>
+</tbody>
+</table>
+<p>If <code>color</code> is <code>-1</code>, the block will shown with its original color palettes.</p>
 <hr />
 <h3 id="sphereobject">SphereObject<a class="headerlink" href="#sphereobject" title="Permanent link">&para;</a></h3>
 <p>Based on <a href="#threedimensionalobject">ThreeDimensionalObject</a></p>
@@ -4475,8 +4488,8 @@ For <code>boolean</code> fields, getter is defined as <code>isXxx</code> or <cod
 </code></pre></div>
 <p>manually update objects, returns the number of updated object.</p>
 <hr />
-<h3 id="autoupdate">autoUpdate<a class="headerlink" href="#autoupdate" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>autoUpdate() -&gt; boolean
+<h3 id="isautoupdating">isAutoUpdating<a class="headerlink" href="#isautoupdating" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>isAutoUpdating() -&gt; boolean
 </code></pre></div>
 <p>returns if objects will be auto synced to client when its fields updating</p>
 <hr />

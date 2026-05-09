@@ -1019,6 +1019,15 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#peripheraldisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      peripheralDisabled
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2847,6 +2856,15 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#peripheraldisabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      peripheralDisabled
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2932,11 +2950,20 @@ You are currently viewing documentation for the upcoming 0.8 version. This versi
 <h3 id="getoperationcooldown">getOperationCooldown<a class="headerlink" href="#getoperationcooldown" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>getOperationCooldown(operationName: string) -&gt; number
 </code></pre></div>
+<p>Returns the remaining cooldown of an operation in milliseconds.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This method only exists if any operation presents on the peripheral.</p>
 </div>
-<p>Returns the remaining cooldown of an operation in milliseconds.</p>
+<hr />
+<h3 id="peripheraldisabled">peripheralDisabled<a class="headerlink" href="#peripheraldisabled" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>peripheralDisabled() -&gt; true
+</code></pre></div>
+<p>See <a href="../../guides/disabled_peripherals/">Disabled Peipherals</a> for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>peripheralDisabled</code> method only exists when the peripheral is disabled by server config, and it will always return <code>true</code>.</p>
+</div>
 <hr />
 <h2 id="changelogtrivia">Changelog/Trivia<a class="headerlink" href="#changelogtrivia" title="Permanent link">&para;</a></h2>
 
