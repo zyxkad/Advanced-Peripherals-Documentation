@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://docs.advanced-peripherals.de/0.8/items/smart_glasses/">
       
       
-        <link rel="prev" href="../pocket_computer/">
+        <link rel="prev" href="../smart_chestplate/">
       
       
         <link rel="next" href="../smart_glasses_interface/">
@@ -382,7 +382,7 @@ You are currently reading the documentation for 0.8. This is subject to change w
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../chunk_controller/" class="md-tabs__link">
+        <a href="../ae_disk_cell/" class="md-tabs__link">
           
   
   
@@ -2126,6 +2126,10 @@ You are currently reading the documentation for 0.8. This is subject to change w
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2171,6 +2175,34 @@ You are currently reading the documentation for 0.8. This is subject to change w
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ae_disk_cell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AE Disk Cell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2288,6 +2320,34 @@ You are currently reading the documentation for 0.8. This is subject to change w
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart_chestplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Smart Chestplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2349,6 +2409,45 @@ You are currently reading the documentation for 0.8. This is subject to change w
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isequipped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isEquipped
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getowner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getOwner
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#changelogtrivia" class="md-nav__link">
@@ -3503,6 +3602,45 @@ You are currently reading the documentation for 0.8. This is subject to change w
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isequipped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isEquipped
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getowner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getOwner
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changelogtrivia" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3554,6 +3692,18 @@ You are currently reading the documentation for 0.8. This is subject to change w
 <p>The Smart Glasses can be used as an advanced pocket computer worn on the head,
 equipped with most peripherials and various <a href="../../modules/">modules</a>!</p>
 <p>You can access Smart Glasses worn on the head via a <a href="../smart_glasses_interface/">Smart Glasses Interface</a>.</p>
+<p><code>smartglasses</code> API exists and only exists on Smart Glasses. You may use it to detect if your script is currently running on a Smart Glasses.</p>
+<hr />
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h3 id="isequipped">isEquipped<a class="headerlink" href="#isequipped" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>isEquipped() -&gt; boolean
+</code></pre></div>
+<p>check if the Smart Glasses is currently on an entity's head.</p>
+<hr />
+<h3 id="getowner">getOwner<a class="headerlink" href="#getowner" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>getOwner() -&gt; table | nil
+</code></pre></div>
+<p>returns the wearer's entity data if the Smart Glasses currently have one.</p>
 <hr />
 <h2 id="changelogtrivia">Changelog/Trivia<a class="headerlink" href="#changelogtrivia" title="Permanent link">&para;</a></h2>
 <p><strong>0.8</strong><br />
@@ -3582,7 +3732,7 @@ Added the AR Controller and AR Goggles, made by Olfi01#6413</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 18, 2026 01:20:34 UTC">June 18, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 23:22:50 UTC">September 28, 2026</span>
   </span>
 
     
@@ -3704,7 +3854,7 @@ Added the AR Controller and AR Goggles, made by Olfi01#6413</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../pocket_computer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pocket Computers">
+          <a href="../smart_chestplate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Smart Chestplate">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3714,7 +3864,7 @@ Added the AR Controller and AR Goggles, made by Olfi01#6413</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Pocket Computers
+                Smart Chestplate
               </div>
             </div>
           </a>
